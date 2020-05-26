@@ -1,0 +1,57 @@
+body{
+    font-family: 'Open sans', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%;
+    padding: 15px;
+    background-color: #f81029;
+
+}
+nav{
+
+}
+.menu-item{
+    padding: 5px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: #fff;
+}
+.menu-item:hover{
+    color: #f81029;
+    background-color: #fff;
+}
+.cart{
+    margin: 0 0 0 700px;
+}
+.cart-icon{
+    background:url(../img/buscket.png) no-repeat 10% center;
+}
+.products{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.product-item{
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.22);
+}
+form{
+    margin: 0 auto;
+}
+.footer{
+    display: flex;
+    padding: 5px 10px;
+    width: 100%;
+    background-color: #f81029;
+}
+.footer > p{
+    margin: 0 5px;
+    font-size: 10px;
+    color: white;
+}

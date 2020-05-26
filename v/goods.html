@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+{% include 'header.html' %}
+<div id="app">
+    <main>
+        <div class="products">
+            <div class="product-item" >
+                <img src="../img/small/1.jpg" alt="good-1">
+                <div class="desc">
+                    <h3>{{product.product_name}}TAG Heuer</h3>
+                    <p>{{product.price}}292000 ₽</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+                {% for good in content_data %}
+                <img src="../img/small/.{{good.image_name}}" alt="">
+                <p>{{good.id}}</p>
+                <p>{{good.title}}</p>
+                <p>{{good.short_descr}}</p>
+                <p>{{good.description}}</p>
+                <p>{{good.image_name}}</p>
+                <p>{{good.price}} ₽</p>
+                {% endfor %}
+                <button id="buy-btn" onclick="f({{good.id}})">Add to cart</button>
+                <a href="index.php?path=item/showItem">More...</a>
+            </div>
+        </div>
+    </main>
+</div>
+{% include 'footer.html' %}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    function f(id){
+        $.ajax({
+            type: "POST",
+            url: "../m/Cart.class.php",
+            data: {id : id},
+            success: function(answer){
+                alert('You have added the good to basket');
+            }
+        });
+    }
+</script>
+</body>
+</html>
