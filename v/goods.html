@@ -11,12 +11,14 @@
     <main>
         <div class="products">
             <div class="product-item" >
+<!--
                 <img src="../img/small/1.jpg" alt="good-1">
                 <div class="desc">
                     <h3>{{product.product_name}}TAG Heuer</h3>
                     <p>{{product.price}}292000 ₽</p>
                     <button class="buy-btn">Купить</button>
                 </div>
+-->
                 {% for good in content_data %}
                 <img src="../img/small/.{{good.image_name}}" alt="">
                 <p>{{good.id}}</p>
