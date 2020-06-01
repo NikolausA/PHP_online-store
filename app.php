@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/PHP_online-store/autoload.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/autoload.php";
 
 try{
     App::init();
