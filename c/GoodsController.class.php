@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/PHP_online-store/m/Goods.class.php";
+include $_SERVER['DOCUMENT_ROOT']."/m/Goods.class.php";
 class GoodsController extends Controller
 {
     public $view = 'goods';
