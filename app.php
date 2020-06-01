@@ -1,5 +1,5 @@
 <?php
-require_once ("autoload.php");
+require_once $_SERVER['DOCUMENT_ROOT']."/autoload.php";
 
 try{
     App::init();

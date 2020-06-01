@@ -1,4 +1,5 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT']."/m/Auth.class.php";
 session_start();
 class AuthController extends Controller
 {

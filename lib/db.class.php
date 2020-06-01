@@ -1,5 +1,5 @@
 <?php
-require_once ('../config.php');
+include $_SERVER['DOCUMENT_ROOT']."/config.php";
 class DB
 {
     protected static $_instance = null;

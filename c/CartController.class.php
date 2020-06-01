@@ -1,5 +1,5 @@
 <?php
-require_once "../m/Goods.class.php";
+include $_SERVER['DOCUMENT_ROOT']."/m/Cart.class.php";
 class CartController extends Controller
 {
     public $view = 'cart';

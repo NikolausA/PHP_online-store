@@ -1,5 +1,5 @@
 <?php
-require_once ('../lib/db.class.php');
+include $_SERVER['DOCUMENT_ROOT']."/lib/db.class.php";
 
 class Goods
 {

@@ -1,5 +1,5 @@
 <?php
-
+include $_SERVER['DOCUMENT_ROOT']."/m/Auth.class.php";
 class SignController extends Controller
 {
     public $view = 'sign_form';
