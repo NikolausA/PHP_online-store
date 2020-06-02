@@ -3,32 +3,23 @@ include $_SERVER['DOCUMENT_ROOT']."/lib/db.class.php";
 
 class Auth
 {
-    private $db;
-
-    function __construct()
-    {
-        $this->db = DB::instance();
-    }
 
     function checkUser($login, $pass) {
-        $s = 'SELECT * FROM `users` WHERE login = :login and password = :pass';
-        $user = $this->db->Select($s, ['login'=>$login, 'pass'=>$pass]);
+        $user = db::getInstance()->Select('SELECT * FROM `users` WHERE login = :login and password = :pass', ['login'=>$login, 'pass'=>$pass]);
             if($user){
                 return true;
             }
     }
 
     function checkLogin($login){
-        $s = 'SELECT * FROM `users` WHERE login = :login';
-        $user = $this->db->Select($s, ['login'=>$login]);
+        $user = db::getInstance()->Select('SELECT * FROM `users` WHERE login = :login', ['login'=>$login]);
         if($user){
             return true;
         }
     }
 
     function addUser($login, $pass){
-        $s = 'INSERT INTO `user` (login, password) VALUES ($login, $pass)';
-        return $this->db->insert($s, []);
+        return db::getInstance()->insert('INSERT INTO `user` (login, password) VALUES ($login, $pass)');
     }
 
 }
