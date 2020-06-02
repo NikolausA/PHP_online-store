@@ -1,30 +1,28 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/config.php";
-class DB
+class db
 {
     protected static $_instance = null;
 
-    private $db; // Ресурс работы с БД
+    private static $db; // Ресурс работы с БД
 
 
-    public static function instance()
+    public static function getInstance()
     {
         if (self::$_instance == null) {
-            $opt = [
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_EMULATE_PREPARES => TRUE
-            ];
-            $connectString = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . DB_CHARSET;
-            self::$_instance = new PDO($connectString, DB_USER, DB_PASS, $opt);
+            self::$_instance = new db();
+
         }
         return self::$_instance;
     }
 
-    /*
-     * Запрещаем копировать объект
-     */
-    private function __construct() {}
+    private function __construct() {
+        self::$db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS,
+            [
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ]);
+    }
     private function __sleep() {}
     private function __wakeup() {}
     private function __clone() {}
